@@ -1,7 +1,7 @@
 var request = require('supertest');
 var should = require("should");
 
-var app = require("./app");
+var app = require("../../app");
 
 describe('Test helloworld routes', function() {
   before(function(done) {
@@ -17,6 +17,7 @@ describe('Test helloworld routes', function() {
 			function check(err, data) {
 				var results = data.body;
         results.should.be.type('object');
+        results.responce.should.equal('hello world')
 				done(err);
 			};
 
@@ -25,5 +26,5 @@ describe('Test helloworld routes', function() {
         .set('Accept', 'application/json')
 				.expect(200, check);
 		});
-  }
-}
+  });
+});
