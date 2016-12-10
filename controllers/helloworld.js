@@ -1,6 +1,6 @@
 exports.get_helloworld = function(req, res) {
   hello = {
-    "responce": "hello world"
+    "responce": "hello word"
   }
 
   //Return a hello world
